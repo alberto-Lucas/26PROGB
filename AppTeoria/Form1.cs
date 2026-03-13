@@ -72,5 +72,39 @@ namespace AppTeoria
 
             MessageBox.Show(opcao);
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            //Iremos limpar os items do ListBox
+            lstLoop.Items.Clear();
+        }
+
+        private void btnForIncremento_Click(object sender, EventArgs e)
+        {
+            //Laço de repetição FOR
+            //Iremos executar um loop de um valor
+            //que sabemos a quantidade de excuções
+            //por exemplo
+            //um loop para listar os numero entre 0 e 10
+
+            //A cada execução iremos adicionar o numero atual
+            //a listBox
+
+            for(int i = 0; i <= 10; i++)
+                //Irei adicionar o valor de i
+                //na istbox
+                //Utilizando o ToString() para converte
+                //a valor de int para string
+                lstLoop.Items.Add(i.ToString());
+        }
+
+        private void btnForDecremento_Click(object sender, EventArgs e)
+        {
+            //Aplicando agora o decremento seguindo o principio
+            //do anterior (incremento)
+
+            for(int i = 10; i >= 0; i--)
+                lstLoop.Items.Add(i.ToString());
+        }
     }
 }
