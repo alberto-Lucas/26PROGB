@@ -43,6 +43,15 @@
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSoNumero = new System.Windows.Forms.Button();
+            this.txtValor1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtValor2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtResultadoMF = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnMetodo = new System.Windows.Forms.Button();
+            this.btnFuncao = new System.Windows.Forms.Button();
+            this.btnFuncao2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // printDialog1
@@ -183,11 +192,98 @@
             this.btnSoNumero.UseVisualStyleBackColor = true;
             this.btnSoNumero.Click += new System.EventHandler(this.btnSoNumero_Click);
             // 
+            // txtValor1
+            // 
+            this.txtValor1.Location = new System.Drawing.Point(287, 172);
+            this.txtValor1.Name = "txtValor1";
+            this.txtValor1.Size = new System.Drawing.Size(100, 20);
+            this.txtValor1.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(284, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Valor 1:";
+            // 
+            // txtValor2
+            // 
+            this.txtValor2.Location = new System.Drawing.Point(287, 217);
+            this.txtValor2.Name = "txtValor2";
+            this.txtValor2.Size = new System.Drawing.Size(100, 20);
+            this.txtValor2.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(284, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Valor 2:";
+            // 
+            // txtResultadoMF
+            // 
+            this.txtResultadoMF.Location = new System.Drawing.Point(287, 262);
+            this.txtResultadoMF.Name = "txtResultadoMF";
+            this.txtResultadoMF.Size = new System.Drawing.Size(100, 20);
+            this.txtResultadoMF.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(284, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Resultado:";
+            // 
+            // btnMetodo
+            // 
+            this.btnMetodo.Location = new System.Drawing.Point(393, 172);
+            this.btnMetodo.Name = "btnMetodo";
+            this.btnMetodo.Size = new System.Drawing.Size(100, 23);
+            this.btnMetodo.TabIndex = 20;
+            this.btnMetodo.Text = "MÉTODO";
+            this.btnMetodo.UseVisualStyleBackColor = true;
+            this.btnMetodo.Click += new System.EventHandler(this.btnMetodo_Click);
+            // 
+            // btnFuncao
+            // 
+            this.btnFuncao.Location = new System.Drawing.Point(393, 215);
+            this.btnFuncao.Name = "btnFuncao";
+            this.btnFuncao.Size = new System.Drawing.Size(100, 23);
+            this.btnFuncao.TabIndex = 21;
+            this.btnFuncao.Text = "FUNÇÃO";
+            this.btnFuncao.UseVisualStyleBackColor = true;
+            this.btnFuncao.Click += new System.EventHandler(this.btnFuncao_Click);
+            // 
+            // btnFuncao2
+            // 
+            this.btnFuncao2.Location = new System.Drawing.Point(393, 260);
+            this.btnFuncao2.Name = "btnFuncao2";
+            this.btnFuncao2.Size = new System.Drawing.Size(100, 23);
+            this.btnFuncao2.TabIndex = 22;
+            this.btnFuncao2.Text = "FUNÇÃO 2";
+            this.btnFuncao2.UseVisualStyleBackColor = true;
+            this.btnFuncao2.Click += new System.EventHandler(this.btnFuncao2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 271);
+            this.ClientSize = new System.Drawing.Size(527, 358);
+            this.Controls.Add(this.btnFuncao2);
+            this.Controls.Add(this.btnFuncao);
+            this.Controls.Add(this.btnMetodo);
+            this.Controls.Add(this.txtResultadoMF);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtValor2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtValor1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSoNumero);
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.label2);
@@ -225,6 +321,15 @@
         private System.Windows.Forms.TextBox txtResultado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSoNumero;
+        private System.Windows.Forms.TextBox txtValor1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtValor2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtResultadoMF;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnMetodo;
+        private System.Windows.Forms.Button btnFuncao;
+        private System.Windows.Forms.Button btnFuncao2;
     }
 }
 

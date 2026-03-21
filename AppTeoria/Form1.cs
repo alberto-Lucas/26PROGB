@@ -222,5 +222,187 @@ namespace AppTeoria
             //com a variavel resultado
             txtResultado.Text = resultado;
         }
-    }
-}
+
+        private void btnMetodo_Click(object sender, EventArgs e)
+        {
+            //Toda a execuçao será realizada pelo método
+            MetodoSomar();
+        }
+
+        //Método somar
+        //onde iremos somar 2 valores
+        //informado pelo usuario
+        //Método não possuem retornos
+        //Portanto são do tipo VOID
+        void MetodoSomar()
+        {
+            //Ações do método serão
+            //Recuperar os dados informados na tela
+            //Converter os valores de string para int
+            //Atribuir esses valores as variaveis
+            //Somar os valores
+            //Apresentar o resultado de volta na tela
+
+            //Criar as variaveis de apoio
+            int v1, v2, resultado;
+
+            //Para converter um valor numerico
+            //é preciso informar o tipo de dado
+            //desejado(int, float, double, decimal)
+            //e chamar a função nativa do tipo de dado
+            //Parse(Converter) e devemos passar
+            //via parametro em formato de string
+            //o valor a ser convertido
+            //o Parse converte apenas string
+            //para valor numerico
+            //Exexemplo irei converte o texto '1' em int
+            //ex: int.Parse("1");
+            //ex: float.Parse("1.5");
+
+            v1 = int.Parse(txtValor1.Text);
+            v2 = int.Parse(txtValor2.Text);
+
+            //realizaremos a soma e o armazenamento 
+            //do resultado
+
+            resultado = v1 + v2;
+
+            //Para exibir o resultado
+            //de volta ao textBox é preciso converter
+            //o conteudo para String
+            //todo tipo de dado numero
+            //possui a função de conversão nativa
+            //basta adicionar .ToString() a variavel
+
+            txtResultadoMF.Text = resultado.ToString();
+        }
+
+        private void btnFuncao_Click(object sender, EventArgs e)
+        {
+            //Por usarmos função
+            //Precisamos que o botão
+            //organize a execução do codigo
+            //diferente do método que
+            //faz todo o serviço
+
+            //Com o uso de função
+            //precisamo "prepara o terreno" 
+            //antes da chamda da função
+
+            //seguir a mesma logica do método
+
+            int v1, v2, resultado;
+
+            //Chamar a função de conversão
+            //e por ter parametro
+            //sou obrigado a passar algum valor 
+            //dentro dos parenteses (parametro)
+            v1 = StringParaInt(txtValor1.Text);
+            //Similar ao 
+            //v1 = int.Parse(txtValor1.Text);
+            v2 = StringParaInt(txtValor2.Text);
+
+            //E para soma vamos chamar a nossa função
+            resultado = FuncaoSomar(v1, v2);
+
+            //e por ultimo exibir o resultado no textbox
+            txtResultadoMF.Text = resultado.ToString();
+        }
+
+        //Função somar
+        //Irá receber 2 valores
+        //realiza a soma e retorna o resultado
+        int FuncaoSomar(int v1, int v2)
+        {
+            return v1 + v2;
+        }
+
+        //Função para converter string em int
+        //Uma função é divida em 4 partes
+        //Tipo de dado de retorno (string, int, bool...)
+        //Nome da função que seja clara e objetiva
+        //Os parametros, informações que recebemos
+        //para manipular dentro da função
+        //e por ultimo a ação em si
+        int StringParaInt(string valor)
+        {
+            //Como estamos convertendo 
+            //a string diretamente para int
+            //caso a string possua qualquer
+            //caracter diferente de numero
+            //ocorrera erro
+            //return int.Parse(valor);
+
+            //Portanto iremos utilizar 
+            //o recurso de TryParse
+            //Onde iremos validar
+            //se a conversao foi possivel
+            //e se não for, retorna um valor padrão
+            //no caso o valor zero(0)
+
+            //o TryParse possui 3 retornos
+            //Se convertido
+            //retorna true e o valor convertido
+            //se não convertido 
+            //retorna apenas false
+
+            //utilizar um if comum
+
+            //Utilizar comentario por bloco usando 
+            //
+            /* 
+            colocar aqui dentro todas as linha q deseja
+            */
+
+            /*
+            if(int.TryParse(valor, out int numero))
+                //retorno o valor convertido
+                return numero; 
+            else
+                //Retornar um valor padrão
+                return 0;
+            */
+
+
+            //Podemos utilizar um if ternario
+            //para gourmetizar o codigo
+            //executado tudo em uma unica linha
+
+            return
+                int.TryParse(valor, out int numero) ?
+                numero : //retono o numero convertido
+                0; //retorno o valor default se falso
+
+            //if ternario é dividido em 3 partes
+            //condicao
+            //resultado true
+            //resultado false
+            //primeiro a condição
+            //depois o valor a ser retornado se true
+            //depois o valor a ser retornado se false
+            //? significa if
+            //: signigica else
+            //ou seja leio como se fosse uma pergunta
+            //ex:
+            //se minha idade for maior ou igaul a 18
+            //sou maior de idade se não sou menor de idade
+            //usando if ternario ficaria
+            //(idade >= 18 ? "sou de maior" : "sou de menor");
+        }
+
+        private void btnFuncao2_Click(object sender, EventArgs e)
+        {
+            //Iremos realiza exato mesmo processo
+            //do Método e da Função
+            //porém em apenas um linha
+
+            txtResultadoMF.Text =
+                FuncaoSomar(
+                    StringParaInt(txtValor1.Text),
+                    StringParaInt(txtValor2.Text)).ToString();
+        }
+
+        //Acima dessas 2 chaves que vc deve criar
+        //os métods e as funções
+    }//é da tela
+}//é do projeto
