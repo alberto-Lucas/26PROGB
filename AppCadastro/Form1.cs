@@ -54,5 +54,12 @@ namespace AppCadastro
             frmCadCliente frm = new frmCadCliente();
             frm.ShowDialog();
         }
+
+        private void configuraçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Chamar a tela de configurações
+            frmConfiguracoes frm = new frmConfiguracoes();
+            frm.ShowDialog();
+        }
     }
 }

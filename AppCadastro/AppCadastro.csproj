@@ -58,6 +58,12 @@
     <Compile Include="frmCadCliente.Designer.cs">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracoes.Designer.cs">
+      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMovimentacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracoes.resx">
+      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovimentacao.resx">
       <DependentUpon>frmMovimentacao.cs</DependentUpon>
