@@ -16,6 +16,20 @@ namespace AppCadastro
         public frmConfiguracoes()
         {
             InitializeComponent();
+
+            //Iremos carregar a imagem salvar
+            //durante a abaertura da tela
+
+            //Iremos recuperar o diretorio pelo método CarregarImagem
+            //e preencher no nosso textBox
+            txtDiretorio.Text = CarregarImagem();
+            //Para carregar a imagem no pictureBox
+            //basta recuperar o diretorio do textBox
+            //Usamos o proprio textBox para não executar 
+            //o CarregarImagem novamente
+            pcbImagem.ImageLocation = txtDiretorio.Text;
+            //Atualizar a imagem
+            pcbImagem.Refresh();
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
@@ -119,6 +133,62 @@ namespace AppCadastro
         {
             //De fato salvamos a imagem no arquivo
             SalvarImagem(txtDiretorio.Text);
+        }
+
+        //Funação para carregar a confgiuração da imagem
+        //Ou seja iremos ser o arquivo de configuração
+        //e retornar o diretorio da imagem salva
+
+        //Adicionar o public para deixar a função Publica
+        //dessa forma ele pode ser acessado de outras telas
+        //quando uma função ou método não possui uma diretiva de acesso
+        //(public ou private) por padrão ela é privada(private)
+        //ou seja só pode ser acessada de dentro da porpria tela
+        //para isto basta adicionar a palavra reservada public
+        //no começo do método ou função
+        public string CarregarImagem()
+        {
+            //Criar uma variavel para o diretorio
+            //com o valor padrão vazio
+            //pois caso ocorre algum problema na leitura do arquivo
+            //o retrono pode ser null gerando erro de tipo de dado
+            //para corrigir definimos um valor de string padrão
+            //caso ocorro erro será retornado o padrão
+            //lembrando que vazio("") é diferente de null
+            string dirImagem = "";
+
+            //Para leitura do arquivo de configuração
+            //Precisamos montar o diretorio de acesso do arquivo
+            //Pasta Raiz + Pasta Padrão + Nome Arquivo
+            //Ex: C:\AppCadastro\Configuracoes\Config.conf
+            string dirArquivo =
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, //Pasta Raiz
+                            "Configuracoes", //Pasta Padrão
+                            "Config.conf"); //Nome Aarquivo
+
+            //Variavel conteudo para armazenar o conteudo do arquivo;
+            string conteudo = "";
+
+            //Validar a existencia do arquivo de configuração
+            //Se existir, lemos o conteudo dele
+            if (File.Exists(dirArquivo))
+                conteudo = File.ReadAllText(dirArquivo);
+
+            //Para extrair o diretorio da imagem do nosso conteudo
+            //é preciso remover o nome do campo (Imagem=)
+            //Iremos usar o recurso Replace para subistituir
+            //uma string por outra
+            //Nesse iremos remover o nome do campos
+            //o subistituindo para vazio
+            //deixando apenas o diretorio
+            //Antes: Imagem=C:\AppCadastro\Imagens\Carro.png
+            //Depois: C:\AppCadastro\Imagens\Carro.png
+            //O codigo seria
+            //Replace("valor_antigo", "valor_novo")
+
+            dirImagem = conteudo.Replace("Imagem=", "");
+            //Só retornar o diretorio da imagem
+            return dirImagem;
         }
     }
 }

@@ -15,6 +15,9 @@ namespace AppCadastro
         public Form1()
         {
             InitializeComponent();
+
+            //Atualizar a imagem de fundo
+            AtualizarImagemFundo();
         }
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +63,33 @@ namespace AppCadastro
             //Chamar a tela de configurações
             frmConfiguracoes frm = new frmConfiguracoes();
             frm.ShowDialog();
+            //Assim que configurar a nova imagem
+            //ja atualizo a tela principal
+            AtualizarImagemFundo();
+        }
+
+        //Método para atualizar a imagem de fundo
+        void AtualizarImagemFundo()
+        {
+            //Para não precisar programar todo o carregamento
+            //de imagem novamente
+            //iremos reutilização a função que está na
+            //tela de configuração
+            //Para o método ou função de outra tela
+            //é preciso transforma-lo em método public
+            //assim ele pode ser acessado de qualquer lugar 
+            //do projeto
+
+            //Para acessar o método publico
+            //é preciso instancia a tela na memoria
+            //e neste caso só iremos acessar a função
+            //não iremos exibir a tela
+
+            frmConfiguracoes frm = new frmConfiguracoes();
+            //Atualizar a imagam de fundo
+            pcbImagemFundo.ImageLocation = frm.CarregarImagem();
+            //Atualizar o pictureBox
+            pcbImagemFundo.Refresh();
         }
     }
 }
