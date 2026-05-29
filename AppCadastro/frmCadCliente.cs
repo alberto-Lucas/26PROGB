@@ -118,5 +118,10 @@ namespace AppCadastro
             //Podemos gravar o arquivo
             File.WriteAllText(Caminho, Conteudo);
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
