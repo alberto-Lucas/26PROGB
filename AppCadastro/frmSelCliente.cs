@@ -20,6 +20,8 @@ namespace AppCadastro
         public frmSelCliente()
         {
             InitializeComponent();
+            //Carregar os arquivos junto com a abertura da tela
+            CarregarCadastros(txtPesquisa.Text);
         }
 
         //Método para carregar os arquivos
@@ -216,6 +218,65 @@ namespace AppCadastro
             int id = lstRegistros.SelectedIndex;
             //Retorno o registro localizado
             return _lista[id];
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //Confirmação de exclusão com o usuario
+            DialogResult retorno =
+                MessageBox.Show("Deseja realmente excluir o registro?",
+                                "Confirmação",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question);
+
+            //Verificar se o usuário confirmou
+            if (retorno == DialogResult.No)
+                return; //Abortamos a exlusão
+
+            //Se clicou em sim, seguimos com a exclusão
+
+            //Primeiro iremos recuperar o registro selecionado
+            string[] registro = GetRegistro();
+
+            //Validamos se não está null
+            if (registro == null)
+                return; //abortamos a excução
+
+            //Agora sim podemos excluir o arquivo
+            try
+            {
+                //Excluir o arquivo usando o diretorio armazenado no registro
+                //essa informação está na posição [0] do nosso array
+                //portanto registro[0] possui o diretorio do arquivo
+                File.Delete(registro[0]);
+                //Recarregamos o arquivos
+                CarregarCadastros(txtPesquisa.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao excluir o registro." + ex.Message);
+            }
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            //Recuperando o registro selecionado
+            string[] registro = GetRegistro();
+
+            //Valido se está null
+            if(registro == null)
+                return;
+
+            //Mapear a tela com o conteudo do registro
+            txtCPF.Text = registro[1];
+            txtNome.Text = registro[2];
+            txtDtNascimento.Text = registro[3];
+            txtRG.Text = registro[4];
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarCadastros(txtPesquisa.Text);
         }
     }
 }
