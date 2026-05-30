@@ -156,5 +156,66 @@ namespace AppCadastro
             //Sobrecever a original com a lista filtrada
             _lista = listaFiltrada;
         }
+
+        //Método para popular os registro na ListBox
+        void CarregarListBox()
+        {
+            //Limpando a listBox
+            lstRegistros.Items.Clear();
+
+            //O processo é bem simples bara realizar um loop
+            //na lista para recuperaro nome do cadastro
+            //e inserir no nome na listBox
+            for(int i = 0; i < _lista.Count; i++)
+            {
+                //Para popular a ListBox
+                //precisamo acessar o campo do registro que desejamos
+                //para isso vamos utilizar a posição do item na lista
+                //e a posição do campo no array do registro
+                //no nosso caso a posição 2 se refere ao campo NOME
+
+                //Variavel para recuperar o item
+                string[] item = _lista[i];
+
+                //popular o listBox
+                lstRegistros.Items.Add(item[2]);
+            }
+        }
+
+        //Método para centralizar os métodos de carregamento
+        void CarregarCadastros(string filtro)
+        {
+            //Carregar o arquivo
+            CarregarArquivos();
+            //Carregar o conteudo do arquivo
+            CarregarConteudo();
+            //Filtrar a lista de registro
+            FiltrarLista(filtro);
+            //Carregar a ListBox
+            CarregarListBox();
+        }
+
+        //Funação paea extrair o registro da ListBox
+        string[] GetRegistro()
+        {
+            //Primeiro verificamos se possui registro selecionado
+            //Lembrando que o listBox começa na posição zero(0)
+            //ou seja quando não possuo registro selecionado
+            //é retornado o valor -1
+            if(lstRegistros.SelectedIndex == -1)
+            {
+                //Notificar o usuario
+                MessageBox.Show("Nenhum registro selecionado");
+                //Como é um função, eu preciso retornar algo
+                //iremos retornar null
+                return null;
+            }
+
+            //Recuperar o ID do arquivo pelo indice da listBox
+            //e pesquisar na lista de arquivos
+            int id = lstRegistros.SelectedIndex;
+            //Retorno o registro localizado
+            return _lista[id];
+        }
     }
 }

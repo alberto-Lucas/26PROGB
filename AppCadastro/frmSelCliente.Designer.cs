@@ -33,16 +33,16 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lsbRegistros = new System.Windows.Forms.ListBox();
+            this.lstRegistros = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDtNascimento = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDtNascimento = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -82,13 +82,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Registros:";
             // 
-            // lsbRegistros
+            // lstRegistros
             // 
-            this.lsbRegistros.FormattingEnabled = true;
-            this.lsbRegistros.Location = new System.Drawing.Point(12, 77);
-            this.lsbRegistros.Name = "lsbRegistros";
-            this.lsbRegistros.Size = new System.Drawing.Size(367, 95);
-            this.lsbRegistros.TabIndex = 4;
+            this.lstRegistros.FormattingEnabled = true;
+            this.lstRegistros.Location = new System.Drawing.Point(12, 77);
+            this.lstRegistros.Name = "lstRegistros";
+            this.lstRegistros.Size = new System.Drawing.Size(367, 95);
+            this.lstRegistros.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -107,37 +107,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
             // 
-            // label3
+            // txtRG
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nome:";
+            this.txtRG.Location = new System.Drawing.Point(182, 83);
+            this.txtRG.Name = "txtRG";
+            this.txtRG.Size = new System.Drawing.Size(179, 20);
+            this.txtRG.TabIndex = 7;
             // 
-            // txtNome
+            // label6
             // 
-            this.txtNome.Location = new System.Drawing.Point(6, 42);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(229, 20);
-            this.txtNome.TabIndex = 1;
-            // 
-            // txtDtNascimento
-            // 
-            this.txtDtNascimento.Location = new System.Drawing.Point(241, 42);
-            this.txtDtNascimento.Name = "txtDtNascimento";
-            this.txtDtNascimento.Size = new System.Drawing.Size(120, 20);
-            this.txtDtNascimento.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Data Nascimento:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "RG:";
             // 
             // txtCPF
             // 
@@ -155,21 +139,37 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "CPF:";
             // 
-            // txtRG
+            // txtDtNascimento
             // 
-            this.txtRG.Location = new System.Drawing.Point(182, 83);
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(179, 20);
-            this.txtRG.TabIndex = 7;
+            this.txtDtNascimento.Location = new System.Drawing.Point(241, 42);
+            this.txtDtNascimento.Name = "txtDtNascimento";
+            this.txtDtNascimento.Size = new System.Drawing.Size(120, 20);
+            this.txtDtNascimento.TabIndex = 3;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "RG:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(241, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Data Nascimento:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(6, 42);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(229, 20);
+            this.txtNome.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nome:";
             // 
             // btnExcluir
             // 
@@ -197,7 +197,7 @@
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lsbRegistros);
+            this.Controls.Add(this.lstRegistros);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisa);
@@ -218,7 +218,7 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lsbRegistros;
+        private System.Windows.Forms.ListBox lstRegistros;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label label5;
