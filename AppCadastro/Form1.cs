@@ -91,5 +91,11 @@ namespace AppCadastro
             //Atualizar o pictureBox
             pcbImagemFundo.Refresh();
         }
+
+        private void listagemDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSelCliente frm = new frmSelCliente();
+            frm.ShowDialog();
+        }
     }
 }

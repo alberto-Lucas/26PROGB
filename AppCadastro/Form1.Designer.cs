@@ -39,6 +39,7 @@
             this.configuraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pcbImagemFundo = new System.Windows.Forms.PictureBox();
+            this.listagemDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemFundo)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,8 @@
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.produtosToolStripMenuItem});
+            this.produtosToolStripMenuItem,
+            this.listagemDeClientesToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -68,14 +70,14 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // movimentaçãoToolStripMenuItem
@@ -132,6 +134,13 @@
             this.pcbImagemFundo.TabIndex = 1;
             this.pcbImagemFundo.TabStop = false;
             // 
+            // listagemDeClientesToolStripMenuItem
+            // 
+            this.listagemDeClientesToolStripMenuItem.Name = "listagemDeClientesToolStripMenuItem";
+            this.listagemDeClientesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.listagemDeClientesToolStripMenuItem.Text = "Listagem de Clientes";
+            this.listagemDeClientesToolStripMenuItem.Click += new System.EventHandler(this.listagemDeClientesToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem utilidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraçãoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pcbImagemFundo;
+        private System.Windows.Forms.ToolStripMenuItem listagemDeClientesToolStripMenuItem;
     }
 }
 
